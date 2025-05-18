@@ -1,2 +1,2 @@
 # tecnorecomendado
-telefono de disco ideal?
+Sitio de recomendaciones tecnológicas
