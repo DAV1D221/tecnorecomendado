@@ -6,53 +6,79 @@
   <meta name="description" content="Blog y recomendaciones sobre tecnología, gadgets, inteligencia artificial y más.">
   <meta name="keywords" content="tecnología, blog, gadgets, IA, móviles, recomendaciones">
   <meta name="author" content="TecnoRecomendado">
-  <title>TecnoRecomendado – Tecnología al día</title>
-  <link rel="canonical" href="https://dav1d221.github.io/tecnorecomendado/">
+  <title>TecnoRecomendado – Tecnología con estilo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    * {
+      box-sizing: border-box;
+    }
     body {
-      font-family: Arial, sans-serif;
+      font-family: 'Inter', sans-serif;
       margin: 0;
       padding: 0;
-      background: #f0f2f5;
-      color: #333;
+      background: linear-gradient(to right, #e0eafc, #cfdef3);
+      color: #1a202c;
     }
     header, footer {
-      background: #1a202c;
+      background: #2b6cb0;
       color: white;
-      padding: 1rem;
+      padding: 1.5rem 1rem;
       text-align: center;
     }
     nav a {
       color: white;
       margin: 0 1rem;
       text-decoration: none;
+      font-weight: bold;
+    }
+    nav a:hover {
+      text-decoration: underline;
     }
     main {
       padding: 2rem;
+      max-width: 900px;
+      margin: auto;
     }
     section {
-      margin-bottom: 3rem;
+      margin-bottom: 4rem;
+    }
+    h2 {
+      border-left: 5px solid #2b6cb0;
+      padding-left: 0.5rem;
     }
     .card {
       background: white;
-      padding: 1rem;
-      margin: 1rem 0;
-      border-radius: 10px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
     .ad {
-      background: #e8f5e9;
-      border: 1px dashed #4caf50;
+      background: #fefcbf;
+      border-left: 4px solid #ecc94b;
       padding: 1rem;
-      margin: 1.5rem 0;
+      margin: 2rem 0;
       text-align: center;
     }
     form input, form textarea {
       width: 100%;
-      padding: 0.5rem;
+      padding: 0.75rem;
       margin-bottom: 1rem;
-      border: 1px solid #ccc;
-      border-radius: 5px;
+      border: 1px solid #cbd5e0;
+      border-radius: 8px;
+    }
+    button {
+      background: #2b6cb0;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #2c5282;
     }
   </style>
   <!-- Google Analytics -->
@@ -67,6 +93,7 @@
 <body>
   <header>
     <h1>TecnoRecomendado</h1>
+    <p>Tu dosis semanal de tecnología con estilo y utilidad</p>
     <nav>
       <a href="#inicio">Inicio</a>
       <a href="#blog">Blog</a>
@@ -78,27 +105,33 @@
   <main>
     <section id="inicio">
       <h2>Bienvenido a TecnoRecomendado</h2>
-      <p>Explora lo último en tecnología, gadgets y consejos útiles. Nuestro objetivo es ayudarte a tomar mejores decisiones tecnológicas.</p>
+      <p>En este espacio exploramos las últimas tendencias tecnológicas, analizamos productos innovadores y compartimos recomendaciones útiles para el día a día. Nuestro objetivo es ayudarte a sacar el máximo provecho de la tecnología moderna con una visión fresca y práctica.</p>
     </section>
 
     <section id="blog">
-      <h2>📰 Últimos artículos del blog</h2>
+      <h2>📰 Artículos recientes</h2>
 
       <div class="card">
         <h3>¿Vale la pena comprar un smartwatch en 2025?</h3>
-        <p>Los relojes inteligentes de hoy integran monitoreo de salud, asistentes IA y gran autonomía.</p>
+        <p>Con avances en sensores biométricos, asistentes inteligentes y diseño, los relojes inteligentes se han convertido en una herramienta útil más allá del fitness.</p>
         <a href="#">Leer más</a>
       </div>
 
       <div class="card">
-        <h3>Top 5 gadgets recomendados para tu escritorio</h3>
-        <p>Desde lámparas inteligentes hasta hubs USB-C que aumentan tu productividad.</p>
+        <h3>Top 5 gadgets para mejorar tu productividad en casa</h3>
+        <p>Descubre dispositivos que hacen tu espacio más eficiente, cómodo y futurista, desde hubs hasta lámparas inteligentes.</p>
+        <a href="#">Leer más</a>
+      </div>
+
+      <div class="card">
+        <h3>¿Qué es la IA generativa y cómo cambiará tu vida?</h3>
+        <p>La inteligencia artificial está transformando desde la forma en que creamos arte hasta cómo trabajamos o aprendemos. ¡Conócela!</p>
         <a href="#">Leer más</a>
       </div>
 
       <div class="ad">
         <!-- Espacio publicitario -->
-        <p>[Aquí va tu anuncio de Google AdSense]</p>
+        <p>[Aquí podría aparecer tu anuncio de Google AdSense]</p>
       </div>
     </section>
 
@@ -107,22 +140,31 @@
 
       <div class="card">
         <h3>Mejores auriculares calidad-precio (2025)</h3>
-        <p><a href="#">Ver en Amazon</a></p>
+        <ul>
+          <li><strong>SoundPeats Air3 Deluxe</strong> – gran sonido y bajo costo. <a href="#">Comprar</a></li>
+          <li><strong>Redmi Buds 5 Pro</strong> – cancelación de ruido asequible. <a href="#">Ver más</a></li>
+          <li><strong>Anker Soundcore</strong> – equilibrio perfecto entre precio y calidad. <a href="#">Ver en Amazon</a></li>
+        </ul>
       </div>
 
       <div class="card">
-        <h3>Top 3 routers WiFi6 para hogar y oficina</h3>
-        <p><a href="#">Ver en AliExpress</a></p>
+        <h3>Top 3 routers WiFi 6 para hogar</h3>
+        <ul>
+          <li><strong>TP-Link AX20</strong> – potente y accesible. <a href="#">Comprar</a></li>
+          <li><strong>Xiaomi AX3000</strong> – excelente relación calidad/precio. <a href="#">Detalles</a></li>
+          <li><strong>Asus RT-AX58U</strong> – ideal para gaming. <a href="#">Ver análisis</a></li>
+        </ul>
       </div>
     </section>
 
     <section id="contacto">
       <h2>📬 Contacto</h2>
+      <p>¿Tienes dudas, sugerencias o una colaboración en mente? Escríbenos a través del siguiente formulario:</p>
       <form>
         <input type="text" name="nombre" placeholder="Tu nombre" required>
         <input type="email" name="email" placeholder="Tu correo" required>
         <textarea name="mensaje" placeholder="Tu mensaje" rows="5"></textarea>
-        <button type="submit">Enviar</button>
+        <button type="submit">Enviar mensaje</button>
       </form>
     </section>
   </main>
