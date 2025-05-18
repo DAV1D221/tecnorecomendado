@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dav1d221.github.io/tecnorecomendado/sitemap.xml
