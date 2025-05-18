@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Explora recomendaciones tecnológicas, gadgets, inteligencia artificial, productividad y más. TecnoRecomendado es tu fuente confiable y visualmente atractiva sobre el mundo tech." />
+  <meta name="keywords" content="tecnología, blog, gadgets, IA, móviles, recomendaciones" />
+  <meta name="author" content="TecnoRecomendado" />
+  <title>TecnoRecomendado – Tecnología con estilo</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+      color: #1a202c;
+      overflow-x: hidden;
+    }
+    header, footer {
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      color: white;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    }
+    nav a {
+      color: white;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: color 0.3s ease;
+    }
+    nav a:hover {
+      color: #e0c3fc;
+      text-decoration: underline;
+    }
+    main {
+      padding: 2rem 1rem 4rem;
+      max-width: 960px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 4rem;
+    }
+    h1, h2, h3 {
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      border-left: 6px solid #764ba2;
+      padding-left: 0.75rem;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #55307f;
+    }
+    /* Íconos en h2 */
+    h2 svg {
+      width: 28px;
+      height: 28px;
+      fill: #764ba2;
+      flex-shrink: 0;
+      animation: pulse 4s infinite ease-in-out;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1);}
+      50% {opacity: 0.7; transform: scale(1.05);}
+    }
+
+    .card {
+      background: white;
+      padding: 1.8rem 1.6rem;
+      margin: 1.5rem 0;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      cursor: default;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 0.7s forwards;
+    }
+    .card:nth-child(1) { animation-delay: 0.1s;}
+    .card:nth-child(2) { animation-delay: 0.2s;}
+    .card:nth-child(3) { animation-delay: 0.3s;}
+    .card:nth-child(4) { animation-delay: 0.4s;}
+    .card:nth-child(5) { animation-delay: 0.5s;}
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 16px 30px rgba(118,75,162,0.4);
+    }
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .ad {
+      background: #fefcbf;
+      border-left: 6px solid #ecc94b;
+      padding: 1.2rem;
+      margin: 2rem 0;
+      text-align: center;
+      font-weight: 600;
+      font-style: italic;
+      border-radius: 16px;
+      color: #735f0f;
+      box-shadow: 0 3px 8px rgba(236,201,75,0.3);
+    }
+    form input, form textarea {
+      width: 100%;
+      padding: 0.85rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #cbd5e0;
+      border-radius: 10px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: inherit;
+    }
+    form input:focus, form textarea:focus {
+      outline: none;
+      border-color: #764ba2;
+      box-shadow: 0 0 8px #9b7de0aa;
+    }
+    button {
+      background: #764ba2;
+      color: white;
+      padding: 0.85rem 2rem;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: 700;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: #5a3394;
+    }
+    .illustration {
+      width: 100%;
+      max-width: 440px;
+      display: block;
+      margin: 1rem auto 2rem;
+      border-radius: 12px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      animation: float 5s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-10px);}
+    }
+    /* Carrusel */
+    .carousel {
+      position: relative;
+      max-width: 900px;
+      margin: 2rem auto 3rem;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+    }
+    .carousel img {
+      width: 100%;
+      display: none;
+      user-select: none;
+    }
+    .carousel img.active {
+      display: block;
+      animation: fadeIn 1s ease forwards;
+    }
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+    .carousel-controls {
+      position: absolute;
+      width: 100%;
+      top: 50%;
+      transform: translateY(-50%);
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      box-sizing: border-box;
+      pointer-events: none;
+    }
+    .carousel-button {
+      background: rgba(118,75,162,0.7);
+      border: none;
+      color: white;
+      font-size: 2rem;
+      border-radius: 50%;
+      width: 44px;
+      height: 44px;
+      cursor: pointer;
+      pointer-events: auto;
+      transition: background 0.3s ease;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 8px rgba(118,75,162,0.6);
+    }
+    .carousel-button:hover {
+      background: #5a3394;
+    }
+
+    /* Lists styling */
+    ul {
+      padding-left: 1.25rem;
+    }
+    ul li {
+      margin-bottom: 0.5rem;
+      font-size: 1rem;
+    }
+    ul li a {
+      color: #764ba2;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    ul li a:hover {
+      color: #a078d6;
+      text-decoration: underline;
+    }
+
+    footer p {
+      margin: 0;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+  </style>
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-N0Q9Z1CZ7G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-N0Q9Z1CZ7G');
+  </script>
+</head>
+<body>
+  <header>
+    <h1>TecnoRecomendado</h1>
+    <p>Tu dosis semanal de tecnología con estilo y utilidad</p>
+    <nav>
+      <a href="#inicio">Inicio</a>
+      <a href="#blog">Blog</a>
+      <a href="#recomendaciones">Recomendaciones</a>
+      <a href="#guias">Guías</a>
+      <a href="#noticias">Noticias</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>
+        <!-- Icono de tecnología -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6 6v2H4v2h2v2H4v2h2v2H2v2h20v-2h-4v-2h2v-2h-2v-2h2V8h-2V6h2V4H2v2h4z"/></svg>
+        Bienvenido a TecnoRecomendado
+      </h2>
+
+      <div class="carousel" aria-label="Carrusel de imágenes tecnológicas">
+        <img src="https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=900&q=80" alt="Placa base de computadora" class="active" />
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=900&q=80" alt="Persona usando un smartwatch" />
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=900&q=80" alt="Brazo con auriculares inalámbricos" />
+      </div>
+
+      <p>En <strong>TecnoRecomendado</strong> descubrirás lo mejor del mundo tecnológico con un enfoque fresco, práctico y visual. Analizamos gadgets innovadores, explicamos tendencias como la inteligencia artificial y compartimos recomendaciones útiles para hacer tu vida más productiva y conectada. Ya seas principiante o apasionado de la tecnología, aquí encontrarás contenido claro, confiable y con estilo.</p>
+    </section>
+
+    <section id="blog">
+      <h2>
+        <!-- Icono de blog -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 4h16v16H4z" fill="none"/><path d="M6 18h12v-2H6zm0-4h12v-2H6zm0-4h12V8H6z"/></svg>
+        📰 Artículos recientes
+      </h2>
+
+      <div class="card" style="animation-delay: 0.1s;">
+        <h3>¿Vale la pena comprar un smartwatch en 2025?</h3>
+        <img src="https://images.unsplash.com/photo-1517433456452-f9633a875f6f?auto=format&fit=crop&w=600&q=70" alt="Smartwatch" class="illustration" />
+        <p>Con avances en sensores biométricos, asistentes inteligentes y diseño, los relojes inteligentes se han convertido en una herramienta útil más allá del fitness.</p>
+        <a href="#">Leer más</a>
+      </div>
+
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3>Top 5 gadgets para mejorar tu productividad en casa</h3>
+        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=600&q=70" alt="Gadgets para productividad" class="illustration" />
+        <p>Descubre dispositivos que hacen tu espacio más eficiente, cómodo y futurista, desde hubs hasta lámparas inteligentes.</p>
+        <a href="#">Leer más</a>
+      </div>
+
+      <div class="card" style="animation-delay: 0.3s;">
+        <h3>¿Qué es la IA generativa y cómo cambiará tu vida?</h3>
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=70" alt="Inteligencia artificial" class="illustration" />
+        <p>La inteligencia artificial está transformando desde la forma en que creamos arte hasta cómo trabajamos o aprendemos. ¡Conócela!</p>
+        <a href="#">Leer más</a>
+      </div>
+
+      <div class="card" style="animation-delay: 0.4s;">
+        <h3>Comparativa de asistentes virtuales: Alexa vs Google Assistant vs Siri</h3>
+        <img src="https://images.unsplash.com/photo-1536305034647-83f8e84e0fa3?auto=format&fit=crop&w=600&q=70" alt="Asistentes virtuales" class="illustration" />
+        <p>¿Cuál es el más inteligente? Analizamos cuál se adapta mejor a tu estilo de vida y hogar.</p>
+        <a href="#">Leer más</a>
+      </div>
+
+      <div class="ad">
+        <!-- Espacio publicitario -->
+        <p>[Aquí podría aparecer tu anuncio de Google AdSense]</p>
+      </div>
+    </section>
+
+    <section id="recomendaciones">
+      <h2>
+        <!-- Icono enchufe -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7 4h10v3h-2v5h2v3H7v-3h2V7H7z"/></svg>
+        🔌 Recomendaciones tecnológicas
+      </h2>
+
+      <div class="card" style="animation-delay: 0.1s;">
+        <h3>Mejores auriculares calidad-precio (2025)</h3>
+        <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=600&q=70" alt="Auriculares" class="illustration" />
+        <ul>
+          <li><strong>SoundPeats Air3 Deluxe</strong> – gran sonido y bajo costo. <a href="#">Comprar</a></li>
+          <li><strong>Redmi Buds 5 Pro</strong> – cancelación de ruido asequible. <a href="#">Ver más</a></li>
+          <li><strong>Anker Soundcore</strong> – equilibrio perfecto entre precio y calidad. <a href="#">Ver en Amazon</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="animation-delay: 0.2s;">
+        <h3>Top 3 routers WiFi 6 para hogar</h3>
+        <img src="https://images.unsplash.com/photo-1587825140408-f56a57d1e2b4?auto=format&fit=crop&w=600&q=70" alt="Router WiFi" class="illustration" />
+        <ul>
+          <li><strong>TP-Link AX20</strong> – potente y accesible. <a href="#">Comprar</a></li>
+          <li><strong>Xiaomi AX3000</strong> – excelente relación calidad/precio. <a href="#">Detalles</a></li>
+          <li><strong>Asus RT-AX58U</strong> – ideal para gaming. <a href="#">Ver análisis</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="guias">
+      <h2>
+        <!-- Icono libro -->
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 2H9a2
